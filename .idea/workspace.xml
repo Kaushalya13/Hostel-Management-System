@@ -4,13 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="428005e3-563d-4894-9c95-995731713e7f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="428005e3-563d-4894-9c95-995731713e7f" name="Changes" comment="Add property file">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hms/bo/custom/Impl/ReservationBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hms/bo/custom/Impl/ReservationBOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hms/bo/custom/Impl/RoomBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hms/bo/custom/Impl/RoomBOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hms/bo/custom/Impl/StudentBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hms/bo/custom/Impl/StudentBOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hms/bo/custom/Impl/UserBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hms/bo/custom/Impl/UserBOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hms/dao/custom/Impl/ReservationDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hms/dao/custom/Impl/ReservationDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hms/dao/custom/Impl/RoomDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hms/dao/custom/Impl/RoomDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hms/dao/custom/Impl/StudentDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hms/dao/custom/Impl/StudentDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hms/dao/custom/Impl/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hms/dao/custom/Impl/UserDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hms/dto/TM/UserTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hms/dto/TM/UserTM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hms/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hms/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hms/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hms/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/signin_from.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/signin_from.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/user_from.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/user_from.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,15 +45,51 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Module/Hibernate/Hostel-Management-System/src/main/resources/assets/images&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.28965518&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Module\Hibernate\Hostel-Management-System\src\main\resources\assets\images" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hms.Main" />
+      <module name="Hostel-Management-System" />
+      <option name="VM_PARAMETERS" value=" --module-path &quot;E:\javafx-sdk-19.0.2.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hms.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -39,11 +98,89 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1692157920386</updated>
-      <workItem from="1692157921783" duration="3000" />
+      <workItem from="1692157921783" duration="12887000" />
+      <workItem from="1692246731282" duration="12854000" />
+      <workItem from="1692285500778" duration="3406000" />
+      <workItem from="1692330223530" duration="7696000" />
+      <workItem from="1692414467939" duration="88000" />
+      <workItem from="1692677340404" duration="7881000" />
+      <workItem from="1692846975180" duration="12576000" />
+      <workItem from="1693147400523" duration="612000" />
+      <workItem from="1693396642924" duration="153000" />
+      <workItem from="1693583485675" duration="138000" />
+      <workItem from="1693583864983" duration="617000" />
+      <workItem from="1693624005496" duration="329000" />
+      <workItem from="1693720895613" duration="1435000" />
+      <workItem from="1693742909547" duration="8204000" />
+      <workItem from="1693754815610" duration="92000" />
+      <workItem from="1693797942709" duration="213000" />
+      <workItem from="1693798517763" duration="7036000" />
+      <workItem from="1693888265853" duration="1050000" />
+      <workItem from="1693917702402" duration="7533000" />
     </task>
+    <task id="LOCAL-00001" summary="Add User From">
+      <created>1693923711971</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1693923711971</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add Student From">
+      <created>1693923764887</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1693923764887</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add SignIn From">
+      <created>1693923799176</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1693923799176</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add Room From">
+      <created>1693923832374</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1693923832374</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add Reservation From">
+      <created>1693924255008</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1693924255008</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add Other">
+      <created>1693924351515</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1693924351515</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add property file">
+      <created>1693924557955</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1693924557955</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add User From" />
+    <MESSAGE value="Add Student From" />
+    <MESSAGE value="Add SignIn From" />
+    <MESSAGE value="Add Room From" />
+    <MESSAGE value="Add Reservation From" />
+    <MESSAGE value="Add Other" />
+    <MESSAGE value="Add property file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add property file" />
   </component>
 </project>

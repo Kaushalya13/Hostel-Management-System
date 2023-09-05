@@ -11,5 +11,5 @@ public class UserTM {
     private String userID;
     private String userName;
     private String password;
-    private String rePassword;
+    private String email;
 }
