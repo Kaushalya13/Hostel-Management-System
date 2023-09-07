@@ -16,10 +16,10 @@ public class UserBOImpl implements UserBO {
 
     @Override
     public List<UserDTO> getAllUsers() throws SQLException, ClassNotFoundException, IOException {
-        List<UserDTO> allUsers = new ArrayList<>();
+        List<UserDTO> allUsers= new ArrayList<>();
         List<User> all = userDAO.getAll();
-        for (User user : all){
-            allUsers.add(new UserDTO(user.getUserID(),user.getUserName(),user.getPassword(),user.getEmail()));
+        for (User user : all) {
+            allUsers.add(new UserDTO(user.getUserID(), user.getUserName(), user.getPassword(), user.getEmail()));
         }
         return allUsers;
     }
@@ -37,6 +37,12 @@ public class UserBOImpl implements UserBO {
     @Override
     public boolean deleteUser(String id) throws SQLException, ClassNotFoundException, IOException {
         return userDAO.delete(id);
+    }
+
+    @Override
+    public UserDTO searchUser(String id) throws SQLException, ClassNotFoundException, IOException {
+        User user = userDAO.search(id);
+        return new UserDTO(user.getUserID(),user.getUserName(),user.getPassword(),user.getEmail());
     }
 
     @Override

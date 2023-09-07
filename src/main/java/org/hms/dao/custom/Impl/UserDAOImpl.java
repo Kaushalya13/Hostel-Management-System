@@ -41,7 +41,7 @@ public class UserDAOImpl implements UserDAO{
         session.update(entity);
         transaction.commit();
         session.close();
-        return false;
+        return true;
     }
 
     @Override
@@ -84,5 +84,19 @@ public class UserDAOImpl implements UserDAO{
         }else {
             return "U001";
         }
+    }
+
+    @Override
+    public User search(String id) throws SQLException, ClassNotFoundException, IOException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        NativeQuery nativeQuery = session.createNativeQuery("SELECT * FROM user WHERE userId = :userId");
+        nativeQuery.setParameter("userId",id);
+
+        nativeQuery.addEntity(User.class);
+        User user = (User) nativeQuery.uniqueResult();
+        transaction.commit();
+        session.close();
+        return user;
     }
 }
