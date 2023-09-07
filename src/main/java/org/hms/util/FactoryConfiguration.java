@@ -17,7 +17,7 @@ public class FactoryConfiguration {
     private FactoryConfiguration() throws IOException {
         Configuration configuration = new Configuration();
         Properties properties = new Properties();
-        properties.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("hibernate.properties"));
+        properties.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("Hibernate.properties"));
         configuration.setProperties(properties);
         configuration.addAnnotatedClass(User.class);
         configuration.addAnnotatedClass(Room.class);
