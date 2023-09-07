@@ -46,4 +46,11 @@ public class ReservationBOImpl implements ReservationBO {
     public String generateNewReservationID() throws SQLException, ClassNotFoundException, IOException {
         return reservationDAO.generateNewID();
     }
+
+    @Override
+    public ReservationDTO searchReservation(String id) throws SQLException, ClassNotFoundException, IOException {
+        Reservation reservation = reservationDAO.search(id);
+        return new ReservationDTO(reservation.getReservationId(),reservation.getDate(),reservation.getRoomId(),reservation.getStudentId(),reservation.getStatus());
+    }
+
 }

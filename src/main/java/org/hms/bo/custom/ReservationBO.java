@@ -16,4 +16,5 @@ public interface ReservationBO extends SuperBO {
     public boolean deleteReservation(String id) throws SQLException, ClassNotFoundException, IOException;
 
     public String generateNewReservationID() throws SQLException, ClassNotFoundException, IOException;
+    public ReservationDTO searchReservation(String id) throws SQLException, ClassNotFoundException, IOException;
 }

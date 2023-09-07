@@ -5,7 +5,6 @@ import org.hibernate.Transaction;
 import org.hibernate.query.NativeQuery;
 import org.hms.dao.custom.ReservationDAO;
 import org.hms.entity.Reservation;
-import org.hms.entity.User;
 import org.hms.util.FactoryConfiguration;
 
 import java.io.IOException;
@@ -49,9 +48,9 @@ public class ReservationDAOImpl implements ReservationDAO {
     public boolean delete(String id) throws SQLException, ClassNotFoundException, IOException {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        String sql = "DELETE FROM reservation WHERE reservationId = :id";
+        String sql = "DELETE FROM reservation WHERE reservationId = :reservationId";
         NativeQuery<Reservation> nativeQuery = session.createNativeQuery(sql);
-        nativeQuery.setParameter("id",id);
+        nativeQuery.setParameter("reservationId",id);
         nativeQuery.executeUpdate();
 
         transaction.commit();
@@ -63,7 +62,7 @@ public class ReservationDAOImpl implements ReservationDAO {
     public String generateNewID() throws SQLException, ClassNotFoundException, IOException {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        NativeQuery<String> nativeQuery = session.createNativeQuery("SELECT reservationId FROM Reseravtion ORDER BY reservationId DESC LIMIT 1");
+        NativeQuery<String> nativeQuery = session.createNativeQuery("SELECT reservationId FROM Reservation ORDER BY reservationId DESC LIMIT 1");
         String id = nativeQuery.uniqueResult();
         transaction.commit();
         session.close();
@@ -79,11 +78,47 @@ public class ReservationDAOImpl implements ReservationDAO {
                 if (length < 3){
                     return "R0"+newID;
                 }else {
-                    return "UR"+newID;
+                    return "R"+newID;
                 }
             }
         }else {
             return "R001";
         }
+    }
+
+    @Override
+    public Reservation search(String id) throws SQLException, ClassNotFoundException, IOException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        NativeQuery nativeQuery = session.createNativeQuery("SELECT * FROM reservation WHERE reservationId = :reservationId");
+        nativeQuery.setParameter("reservationId",id);
+
+        nativeQuery.addEntity(Reservation.class);
+        Reservation reservation = (Reservation) nativeQuery.uniqueResult();
+        transaction.commit();
+        session.close();
+        return reservation;
+    }
+
+    @Override
+    public List<String> loadStudentID() throws IOException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        NativeQuery nativeQuery = session.createNativeQuery("SELECT studentID FROM student");
+        List<String> studentIds = nativeQuery.getResultList();
+        transaction.commit();
+        session.close();
+        return studentIds;
+    }
+
+    @Override
+    public List<String> loadRoomID() throws IOException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        NativeQuery nativeQuery = session.createNativeQuery("SELECT roomId FROM room");
+        List<String> roomIds = nativeQuery.getResultList();
+        transaction.commit();
+        session.close();
+        return roomIds;
     }
 }
