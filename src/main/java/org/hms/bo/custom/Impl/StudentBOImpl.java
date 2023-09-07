@@ -4,9 +4,7 @@ import org.hms.bo.custom.StudentBO;
 import org.hms.dao.DAOFactory;
 import org.hms.dao.custom.StudentDAO;
 import org.hms.dto.StudentDTO;
-import org.hms.dto.UserDTO;
 import org.hms.entity.Student;
-import org.hms.entity.User;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -47,5 +45,11 @@ public class StudentBOImpl implements StudentBO {
     @Override
     public String generateNewStudentID() throws SQLException, ClassNotFoundException, IOException {
         return studentDAO.generateNewID();
+    }
+
+    @Override
+    public StudentDTO searchStudent(String id) throws SQLException, ClassNotFoundException, IOException {
+        Student student = studentDAO.search(id);
+        return new StudentDTO(student.getStudentID(),student.getName(),student.getAddress(),student.getContact(),student.getDbo(),student.getGender());
     }
 }

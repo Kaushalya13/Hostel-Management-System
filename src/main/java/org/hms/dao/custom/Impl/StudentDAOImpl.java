@@ -48,7 +48,7 @@ public class StudentDAOImpl implements StudentDAO {
     public boolean delete(String id) throws SQLException, ClassNotFoundException, IOException {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        String sql = "DELETE FROM student WHERE studentId = :id";
+        String sql = "DELETE FROM student WHERE studentID = :id";
         NativeQuery<Student> nativeQuery = session.createNativeQuery(sql);
         nativeQuery.setParameter("id",id);
         nativeQuery.executeUpdate();
@@ -62,7 +62,7 @@ public class StudentDAOImpl implements StudentDAO {
     public String generateNewID() throws SQLException, ClassNotFoundException, IOException {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        NativeQuery<String> nativeQuery = session.createNativeQuery("SELECT studentId FROM Student ORDER BY studentId DESC LIMIT 1");
+        NativeQuery<String> nativeQuery = session.createNativeQuery("SELECT studentID FROM Student ORDER BY studentID DESC LIMIT 1");
         String id = nativeQuery.uniqueResult();
         transaction.commit();
         session.close();
@@ -84,5 +84,19 @@ public class StudentDAOImpl implements StudentDAO {
         }else {
             return "S001";
         }
+    }
+
+    @Override
+    public Student search(String id) throws SQLException, ClassNotFoundException, IOException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        NativeQuery nativeQuery = session.createNativeQuery("SELECT * FROM student WHERE studentID = :studentID");
+        nativeQuery.setParameter("studentID",id);
+
+        nativeQuery.addEntity(Student.class);
+        Student student = (Student) nativeQuery.uniqueResult();
+        transaction.commit();
+        session.close();
+        return student;
     }
 }
