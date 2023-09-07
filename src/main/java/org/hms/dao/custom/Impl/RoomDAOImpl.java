@@ -5,7 +5,6 @@ import org.hibernate.Transaction;
 import org.hibernate.query.NativeQuery;
 import org.hms.dao.custom.RoomDAO;
 import org.hms.entity.Room;
-import org.hms.entity.User;
 import org.hms.util.FactoryConfiguration;
 
 import java.io.IOException;
@@ -85,5 +84,19 @@ public class RoomDAOImpl implements RoomDAO {
         }else {
             return "RM-001";
         }
+    }
+
+    @Override
+    public Room search(String id) throws SQLException, ClassNotFoundException, IOException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        NativeQuery nativeQuery = session.createNativeQuery("SELECT * FROM room WHERE roomId = :roomId");
+        nativeQuery.setParameter("roomId",id);
+
+        nativeQuery.addEntity(Room.class);
+        Room room = (Room) nativeQuery.uniqueResult();
+        transaction.commit();
+        session.close();
+        return room;
     }
 }

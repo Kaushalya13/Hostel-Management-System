@@ -60,15 +60,18 @@
                   <Font name="Arial Black" size="18.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="txtKeyMoney" layoutX="197.0" layoutY="181.0" prefHeight="31.0" prefWidth="185.0" style="-fx-border-color: blue;" />
+            <JFXTextField fx:id="txtKeyMoney" layoutX="197.0" layoutY="181.0" onKeyReleased="#txtKeyMoneyOnKeyReleased" prefHeight="31.0" prefWidth="185.0" promptText="Ex : 2000.00" style="-fx-border-color: blue;" />
             <Label layoutX="35.0" layoutY="245.0" prefHeight="32.0" prefWidth="128.0" text="Qty             :">
                <font>
                   <Font name="Arial Black" size="18.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="txtQty" layoutX="197.0" layoutY="243.0" prefHeight="31.0" prefWidth="185.0" style="-fx-border-color: blue;" />
+            <JFXTextField fx:id="txtQty" layoutX="197.0" layoutY="243.0" onKeyReleased="#txtQtyOnKeyReleased" prefHeight="31.0" prefWidth="185.0" promptText="Ex : 20" style="-fx-border-color: blue;" />
             <ComboBox fx:id="cmbType" layoutX="197.0" layoutY="121.0" prefHeight="31.0" prefWidth="185.0" style="-fx-border-color: blue;" />
-            <Label fx:id="lblRoomID" layoutX="197.0" layoutY="61.0" prefHeight="33.0" prefWidth="185.0" style="-fx-border-color: blue;" />
+            <Label fx:id="lblRoomID" layoutX="197.0" layoutY="61.0" prefHeight="33.0" prefWidth="185.0" style="-fx-border-color: blue;" text="RM-001">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font></Label>
          </children>
       </AnchorPane>
       <JFXButton layoutX="1087.0" layoutY="137.0" onAction="#btnSaveOnAction" prefHeight="31.0" prefWidth="128.0" stylesheets="@../style/Style.css" text="Save">
@@ -89,7 +92,7 @@
             <String fx:value="btnSide" />
          </styleClass>
       </JFXButton>
-      <TextField layoutX="951.0" layoutY="252.0" onAction="#txtSearchOnAction" prefHeight="31.0" prefWidth="265.0" promptText="Search" styleClass="btnSide" stylesheets="@../style/Style.css">
+      <TextField fx:id="txtSearch" layoutX="916.0" layoutY="252.0" onAction="#txtSearchOnAction" prefHeight="33.0" prefWidth="300.0" promptText="Search" styleClass="btnSide" stylesheets="@../style/Style.css">
          <font>
             <Font name="Arial Black" size="15.0" />
          </font>
@@ -99,7 +102,7 @@
             <TableColumn fx:id="colRoomID" prefWidth="142.0" text="Room-ID" />
             <TableColumn fx:id="colType" prefWidth="177.0" text="Type" />
             <TableColumn fx:id="colKeyMoney" prefWidth="193.0" text="Key money" />
-            <TableColumn prefWidth="150.0" text="Qty" />
+            <TableColumn fx:id="colQty" prefWidth="150.0" text="Qty" />
          </columns>
       </TableView>
    </children>

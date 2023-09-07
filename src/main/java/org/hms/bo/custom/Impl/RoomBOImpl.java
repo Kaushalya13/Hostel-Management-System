@@ -43,4 +43,10 @@ public class RoomBOImpl implements RoomBO {
     public String generateNewRoomID() throws SQLException, ClassNotFoundException, IOException {
         return roomDAO.generateNewID();
     }
+
+    @Override
+    public RoomDTO searchRoom(String id) throws SQLException, ClassNotFoundException, IOException {
+        Room room = roomDAO.search(id);
+        return new RoomDTO(room.getRoomId(),room.getType(),room.getKeyMoney(),room.getQty());
+    }
 }

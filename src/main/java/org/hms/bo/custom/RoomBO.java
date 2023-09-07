@@ -16,4 +16,6 @@ public interface RoomBO extends SuperBO {
     public boolean deleteRoom(String id) throws SQLException, ClassNotFoundException, IOException;
 
     public String generateNewRoomID() throws SQLException, ClassNotFoundException, IOException;
+    public RoomDTO searchRoom(String id) throws SQLException, ClassNotFoundException, IOException;
+
 }
