@@ -2,14 +2,18 @@ package org.hms.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+import java.util.List;
+
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class Student{
     @Id
     private String studentID;
@@ -18,5 +22,7 @@ public class Student{
     private String dbo;
     private String contact;
     private String gender;
-
+//
+//    @OneToMany(mappedBy = "studentId")
+//    private List<Reservation> reservations;
 }
