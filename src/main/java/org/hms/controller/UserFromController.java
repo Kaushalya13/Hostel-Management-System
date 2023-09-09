@@ -108,7 +108,7 @@ public class UserFromController implements Initializable {
         UserDTO userDTO = new UserDTO(lblUser_id.getText(), txtUsername.getText(), txtPassword.getText(), txtEmail.getText());
 
         if (userBO.addUser(userDTO)) {
-            new Alert(Alert.AlertType.CONFIRMATION, "Saved", ButtonType.OK).show();
+            new Alert(Alert.AlertType.CONFIRMATION, "Successfully Save", ButtonType.OK).show();
         } else {
             new Alert(Alert.AlertType.WARNING, "Try again", ButtonType.OK).show();
         }

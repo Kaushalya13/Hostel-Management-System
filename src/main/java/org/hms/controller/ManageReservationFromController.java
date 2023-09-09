@@ -9,8 +9,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.hms.bo.BOFactory;
 import org.hms.bo.custom.ReservationBO;
-import org.hms.bo.custom.RoomBO;
-import org.hms.bo.custom.StudentBO;
 import org.hms.dao.DAOFactory;
 import org.hms.dao.custom.ReservationDAO;
 import org.hms.dao.custom.RoomDAO;
@@ -62,9 +60,6 @@ public class ManageReservationFromController implements Initializable {
     private TableColumn<?, ?> colStatus;
 
     ReservationBO reservationBO =(ReservationBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.RESERVATION);
-    RoomBO roomBO =(RoomBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.ROOM);
-    StudentBO studentBO =(StudentBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.STUDENT);
-
     ReservationDAO reservationDAO = (ReservationDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.RESERVATION);
     RoomDAO roomDAO = (RoomDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ROOM);
 
@@ -157,8 +152,11 @@ public class ManageReservationFromController implements Initializable {
     public void btnSaveOnAction(ActionEvent actionEvent) throws SQLException, IOException, ClassNotFoundException {
         String date=Date.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         ReservationDTO reservationDTO = new ReservationDTO(lblReservationId.getText(),date, cmbRoomID.getValue(), cmbStudentID.getValue(), cmbStatus.getValue());
+
+        roomDAO.updateRoomQut();
+
         if (reservationBO.addReservation(reservationDTO)){
-            new Alert(Alert.AlertType.CONFIRMATION,"Saved", ButtonType.OK).show();
+            new Alert(Alert.AlertType.CONFIRMATION,"Successfully Save", ButtonType.OK).show();
         }else {
             new Alert(Alert.AlertType.WARNING,"Try again",ButtonType.OK).show();
         }

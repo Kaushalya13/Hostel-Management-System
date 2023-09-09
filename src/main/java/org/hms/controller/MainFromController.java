@@ -83,6 +83,16 @@ public class MainFromController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initClock();
+        URL resource = getClass().getResource("/view/dashboard_from.fxml");
+        assert  resource != null;
+        Parent load = null;
+        try {
+            load = FXMLLoader.load(resource);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        loadFormContext.getChildren().clear();
+        loadFormContext.getChildren().add(load);
     }
 
     private void initClock() {

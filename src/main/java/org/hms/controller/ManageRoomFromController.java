@@ -12,6 +12,7 @@ import javafx.scene.input.KeyEvent;
 import org.hms.bo.BOFactory;
 import org.hms.bo.custom.RoomBO;
 import org.hms.dto.RoomDTO;
+import org.hms.entity.Reservation;
 import org.hms.entity.Room;
 import org.hms.util.Regex;
 import org.hms.util.TextFields;
@@ -19,6 +20,7 @@ import org.hms.util.TextFields;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -115,7 +117,7 @@ public class ManageRoomFromController implements Initializable {
         }
         RoomDTO roomDTO = new RoomDTO(lblRoomID.getText(), cmbType.getValue(), Double.parseDouble(txtKeyMoney.getText()), Integer.parseInt(txtQty.getText()));
         if (roomBO.addRoom(roomDTO)){
-            new Alert(Alert.AlertType.CONFIRMATION,"Saved", ButtonType.OK).show();
+            new Alert(Alert.AlertType.CONFIRMATION,"Successfully Save", ButtonType.OK).show();
         }else {
             new Alert(Alert.AlertType.WARNING,"Try again",ButtonType.OK).show();
         }

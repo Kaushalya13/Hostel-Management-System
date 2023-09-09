@@ -12,6 +12,7 @@ import javafx.scene.input.KeyEvent;
 import org.hms.bo.BOFactory;
 import org.hms.bo.custom.StudentBO;
 import org.hms.dto.StudentDTO;
+import org.hms.entity.Reservation;
 import org.hms.entity.Student;
 import org.hms.util.Regex;
 import org.hms.util.TextFields;
@@ -21,6 +22,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -134,7 +136,7 @@ public class ManageStudentFromController implements Initializable {
         StudentDTO studentDTO = new StudentDTO(lblStudentId.getText(), txtName.getText(), txtAddress.getText(), txtContactNo.getText(),date,cmbGender.getValue());
 
         if (studentBO.addStudent(studentDTO)){
-            new Alert(Alert.AlertType.CONFIRMATION,"Saved", ButtonType.OK).show();
+            new Alert(Alert.AlertType.CONFIRMATION,"Successfully Save", ButtonType.OK).show();
         }else {
             new Alert(Alert.AlertType.WARNING,"Try again",ButtonType.OK).show();
         }

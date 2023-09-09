@@ -55,7 +55,7 @@ public class SignInFromController implements Initializable {
         }
         UserDTO userDTO = new UserDTO(lblUserID.getText(), txtUsername.getText(), txtPassword.getText(), txtEmail.getText());
         if (userBO.addUser(userDTO)){
-            new Alert(Alert.AlertType.CONFIRMATION, "Register", ButtonType.OK).show();
+            new Alert(Alert.AlertType.CONFIRMATION, "Successfully Register", ButtonType.OK).show();
         } else {
             new Alert(Alert.AlertType.WARNING, "Try again", ButtonType.OK).show();
         }
